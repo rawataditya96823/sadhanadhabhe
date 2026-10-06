@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Sadhna Dhaba — पारंपरिक भारतीय स्वाद, परिवार और दोस्तों के साथ यादगार भोजन।">
+<title>Sadhna Dhaba | साधना ढाबा</title>
+<style>
+:root{--bg:#130b07;--card:#21130d;--cream:#fff5e6;--muted:#d6c2ae;--gold:#f4a62a;--red:#a92f19;--green:#315b36}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#faf4eb;color:#24140d;line-height:1.6}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
+a{text-decoration:none}.top{background:#0d0705;color:#f8d99c;text-align:center;padding:7px;font-size:13px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(19,11,7,.96);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:13px 5%;box-shadow:0 4px 18px #0005}
+.brand{color:#fff;font-weight:bold;font-size:19px}.brand span{color:var(--gold)}
+nav{display:flex;gap:20px}nav a{color:#fff;font-size:14px;font-weight:bold}nav a:hover{color:var(--gold)}
+.hero{min-height:78vh;display:grid;place-items:center;text-align:center;color:white;padding:90px 20px;background:linear-gradient(#0008,#0009),url('https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1800&q=85') center/cover fixed}
+.hero small{color:#ffd27a;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(44px,8vw,88px);margin:12px 0}.hero p{font-size:clamp(18px,3vw,25px);max-width:760px;margin:auto;color:#fff5e6}
+.btns{margin-top:30px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{padding:13px 22px;border-radius:8px;font-weight:bold;display:inline-block;transition:.25s}.gold{background:var(--gold);color:#211006}.outline{border:1px solid #fff;color:#fff}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #0005}
+.section{max-width:1150px;margin:auto;padding:75px 20px}.dark{max-width:none;background:var(--bg);color:var(--cream)}.dark>.inner{max-width:1150px;margin:auto}
+.title{text-align:center;margin-bottom:35px}.title h2{font-size:clamp(30px,5vw,45px);color:#7b2b17}.dark .title h2{color:#f4a62a}.title p{color:#735f50}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}.tab{border:1px solid #d7b99d;background:white;padding:9px 15px;border-radius:30px;cursor:pointer}.tab.active{background:var(--red);color:white}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.dish{background:white;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px #35140712;transition:.3s}.dish:hover{transform:translateY(-7px);box-shadow:0 15px 35px #35140722}.dish img{width:100%;height:190px;object-fit:cover}.dishbody{padding:18px}.dishrow{display:flex;justify-content:space-between;gap:10px}.price{color:#a92f19;font-weight:bold}.tag{display:inline-block;background:#f7e1b9;padding:3px 8px;border-radius:20px;font-size:11px;margin-top:8px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.story img{width:100%;border-radius:18px;height:390px;object-fit:cover}.story h2{font-size:42px;color:#7b2b17;margin-bottom:15px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;transition:.35s}.gallery img:hover{transform:scale(1.04)}
+.info{background:var(--bg);color:white}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.map{width:100%;height:380px;border:0;border-radius:15px}.info h2{color:var(--gold)}.info p{color:var(--muted);margin:7px 0}.status{display:inline-block;background:#234d2b;color:#b9f2c2;padding:6px 11px;border-radius:20px;font-size:13px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:#fff;padding:24px;border-radius:14px;border:1px solid #eadaca}.stars{color:#e79a12;font-size:20px}
+.reservation{background:linear-gradient(135deg,#7e2414,#3b120b);color:white}.form{max-width:800px;margin:auto;background:#fff;color:#24140d;padding:28px;border-radius:16px;display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.form label{font-weight:bold;font-size:14px}.form input,.form select{width:100%;padding:12px;border:1px solid #d9c4b0;border-radius:8px;margin-top:5px}.form button{grid-column:1/-1;border:0;cursor:pointer;font-size:16px}.success{display:none;text-align:center;color:#256b31;font-weight:bold;padding-top:10px}
+footer{background:#0d0705;color:#ddd;text-align:center;padding:28px 15px}.mobilebar{display:none}
+@media(max-width:850px){nav{display:none}.menu,.reviews{grid-template-columns:1fr 1fr}.story,.info-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hero{background-attachment:scroll}.menu,.reviews,.form{grid-template-columns:1fr}.gallery img{height:170px}.mobilebar{position:fixed;display:flex;bottom:0;left:0;right:0;z-index:100;background:#130b07;padding:9px;gap:8px}.mobilebar a{flex:1;text-align:center;padding:10px;border-radius:7px;font-weight:bold}.mobilebar .gold{color:#211006}.mobilebar .outline{border:1px solid #f4a62a;color:#f4a62a}}
+</style>
+</head>
+<body>
+<div class="top">🍛 पारंपरिक भारतीय स्वाद • परिवार • दोस्त • यात्रियों का स्वागत</div>
+
+<header class="nav">
+<a class="brand" href="#home">SADHNA <span>DHABA</span> | साधना ढाबा</a>
+<nav><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#location">Location</a><a href="#book">Booking</a></nav>
+</header>
+
+<section class="hero" id="home">
+<div>
+<small>स्वाद जो याद रह जाए</small>
+<h1>Sadhna Dhaba</h1>
+<p>गरमा-गरम देसी खाना, अपनापन और सड़क के सफर में एक स्वादिष्ट ठहराव।</p>
+<div class="btns"><a class="btn gold" href="#book">Reserve a Table</a><a class="btn outline" href="#menu">View Menu</a></div>
+</div>
+</section>
+
+<section class="section" id="menu">
+<div class="title"><h2>हमारा मेनू</h2><p>Freshly prepared • ताज़ा और स्वादिष्ट</p></div>
+<div class="tabs"><button class="tab active" onclick="filterMenu('all',this)">सब</button><button class="tab" onclick="filterMenu('starter',this)">Starters</button><button class="tab" onclick="filterMenu('main',this)">Main Course</button><button class="tab" onclick="filterMenu('bread',this)">Breads</button><button class="tab" onclick="filterMenu('dessert',this)">Desserts</button></div>
+<div class="menu">
+<article class="dish" data-cat="starter"><img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80"><div class="dishbody"><div class="dishrow"><h3>Paneer Tikka</h3><b class="price">₹—</b></div><p>मसालेदार grilled paneer cubes.</p><span class="tag">⭐ Popular</span></div></article>
+<article class="dish" data-cat="main"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80"><div class="dishbody"><div class="dishrow"><h3>Dal Tadka</h3><b class="price">₹—</b></div><p>देसी तड़के वाली comforting dal.</p><span class="tag">🌱 Vegetarian</span></div></article>
+<article class="dish" data-cat="main"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=80"><div class="dishbody"><div class="dishrow"><h3>Butter Chicken</h3><b class="price">₹—</b></div><p>Rich, creamy और aromatic curry.</p><span class="tag">⭐ Popular</span></div></article>
+<article class="dish" data-cat="bread"><img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=900&q=80"><div class="dishbody"><div class="dishrow"><h3>Tandoori Roti</h3><b class="price">₹—</b></div><p>तंदूर से निकली गरमा-गरम रोटी।</p></div></article>
+<article class="dish" data-cat="bread"><img src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=900&q=80"><div class="dishbody"><div class="dishrow"><h3>Garlic Naan</h3><b class="price">₹—</b></div><p>Soft naan with garlic & butter.</p></div></article>
+<article class="dish" data-cat="dessert"><img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80"><div class="dishbody"><div class="dishrow"><h3>Gulab Jamun</h3><b class="price">₹—</b></div><p>गरमा-गरम मीठा भारतीय dessert.</p><span class="tag">🍯 Sweet</span></div></article>
+</div>
+<p style="text-align:center;margin-top:22px;color:#806c5c">* Prices और dishes को अपने actual menu के अनुसार update करें।</p>
+</section>
+
+<section class="section" id="about">
+<div class="story"><img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=80"><div><h2>दिल से बना खाना</h2><p>साधना ढाबा भारतीय खाने की पारंपरिक खुशबू और अपनापन एक साथ लाने की कोशिश करता है। चाहे family dinner हो, दोस्तों के साथ stop हो या लंबा road trip—यहाँ आपका स्वागत है।</p><br><p>हमारा लक्ष्य है simple ingredients, भरपूर स्वाद और आरामदायक माहौल के साथ एक यादगार meal देना।</p></div></div>
+</section>
+
+<section class="section dark">
+<div class="inner"><div class="title"><h2>हमारा माहौल</h2><p style="color:#d6c2ae">A warm stop for every kind of traveler.</p></div>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=800&q=80">
+</div></div>
+</section>
+
+<section class="section info" id="location">
+<div class="info-grid">
+<div><h2>हमसे मिलें</h2><span class="status">● Open / Hours देखें</span><p>📍 Sadhna Dhaba, Google Maps location</p><p>🚗 Families, couples और road travelers के लिए convenient stop.</p><div class="btns" style="justify-content:flex-start"><a class="btn gold" target="_blank" href="https://maps.app.goo.gl/gKw5YLPyD4PEBoid8">Get Directions</a><a class="btn outline" href="tel:+910000000000">Call Us</a></div></div>
+<iframe class="map" loading="lazy" src="https://www.google.com/maps?q=Sadhna%20Dhaba%2C%20Uttar%20Pradesh&output=embed"></iframe>
+</div>
+</section>
+
+<section class="section" id="reviews">
+<div class="title"><h2>मेहमानों की राय</h2><p>Google reviews section — अपने verified reviews यहाँ जोड़ें।</p></div>
+<div class="reviews">
+<div class="review"><div class="stars">★★★★★</div><h3>एक यादगार meal</h3><p>“खाने और service का अनुभव बहुत अच्छा रहा।”</p><b>— Guest Review</b></div>
+<div class="review"><div class="stars">★★★★★</div><h3>Family friendly</h3><p>“परिवार के साथ रुकने के लिए अच्छा option।”</p><b>— Guest Review</b></div>
+<div class="review"><div class="stars">★★★★★</div><h3>Road trip stop</h3><p>“गरमा-गरम खाना और आराम से बैठने की जगह।”</p><b>— Guest Review</b></div>
+</div>
+</section>
+
+<section class="section reservation" id="book">
+<div class="title"><h2 style="color:#ffd17a">टेबल बुक करें</h2><p style="color:#fff0dc">अपनी पसंद का समय चुनें।</p></div>
+<form class="form" onsubmit="book(event)">
+<label>नाम<input required placeholder="आपका नाम"></label>
+<label>मोबाइल<input required type="tel" placeholder="10-digit mobile"></label>
+<label>तारीख<input required type="date"></label>
+<label>समय<input required type="time"></label>
+<label>Guests<select><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option><option>5+ Guests</option></select></label>
+<button class="btn gold" type="submit">Request Reservation</button>
+<div class="success" id="success">✅ Booking request तैयार है! कृपया restaurant से phone पर confirmation लें।</div>
+</form>
+</section>
+
+<footer><p><b>Sadhna Dhaba | साधना ढाबा</b></p><p>पारंपरिक भारतीय स्वाद • © 2026</p><p style="font-size:12px;color:#aaa">Menu prices, phone number, hours और verified reviews को actual business details से replace करें।</p></footer>
+
+<div class="mobilebar"><a class="gold" href="#book">🍽 Book Table</a><a class="outline" target="_blank" href="https://maps.app.goo.gl/gKw5YLPyD4PEBoid8">📍 Directions</a></div>
+
+<script>
+function filterMenu(cat,btn){
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+ document.querySelectorAll('.dish').forEach(x=>x.style.display=(cat==='all'||x.dataset.cat===cat)?'block':'none');
+}
+function book(e){e.preventDefault();document.getElementById('success').style.display='block';}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='translateY(0)'}}),{threshold:.12});
+document.querySelectorAll('.card,.story,.gallery img,.dish').forEach(el=>{el.style.opacity=0;el.style.transform='translateY(18px)';el.style.transition='opacity .6s ease,transform .6s ease';io.observe(el)});
+</script>
+</body>
+</html>
